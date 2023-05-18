@@ -1,7 +1,10 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Roboto_Flex as Roboto } from '@next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto'
+})
 
 export const metadata = {
   title: 'Weather App',
@@ -11,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${roboto.variable} bg-blue-400 font-sans`}>{children}</body>
     </html>
   )
 }
