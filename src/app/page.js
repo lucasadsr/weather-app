@@ -1,6 +1,10 @@
 'use client'
 
-import { Search, MapPin, Droplet, Wind } from 'lucide-react'
+import City from '@/components/City'
+import Error from '@/components/Error'
+import Loading from '@/components/Loading'
+import Stats from '@/components/Stats'
+import { Search } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Home() {
@@ -47,36 +51,19 @@ export default function Home() {
           </button>
         </form>
 
-        {data ? <div className=''>
-          <div className='flex justify-center items-center gap-2 my-8'>
-            <MapPin />
-            <p className='text-2xl font-bold' >{data.name}</p>
-            <img className='h-12' src={`https://www.countryflagicons.com/FLAT/64/${data.sys.country}.png`} alt="Country flag" />
+        {data ?
+          <div>
+            <City data={data} />
+            <Stats data={data} />
           </div>
-
-          <div className='flex justify-between'>
-            <div>
-              <span className='text-lg'>{Math.round(data.main.temp)}℃</span>
-              <div className='flex items-center gap-2'>
-                <span className='capitalize text-lg'>{data.weather[0].description}</span>
-                <img className='w-11' src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt="" />
-              </div>
-            </div>
-            <div>
-              <div className='flex items-center capitalize text-lg'><Droplet /><span className='px-1'>{data.main.humidity}%</span></div>
-              <div className='flex items-center capitalize text-lg mt-2'><Wind /><span className='px-1'>{data.wind.speed}km/h</span></div>
-            </div>
-          </div>
-        </div> : ''}
+          : ''}
 
         {loading ?
-          <p className='my-4 text-lg font-bold'>Loading...</p>
+          <Loading />
           : ''}
 
         {error ?
-          <div>
-            <p className='my-4 text-lg font-bold'>City not found! Try again.</p>
-          </div>
+          <Error />
           : ''}
 
       </div>
