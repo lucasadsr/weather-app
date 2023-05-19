@@ -41,32 +41,39 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex justify-center items-center">
-      <div className="h-fit min-w-[360px] bg-white/50 rounded-lg py-8 px-7 mx-2 shadow-lg">
-        <h1 className="text-center text-2xl font-bold">Weather App</h1>
-        <form className='flex w-full justify-between items-center mt-5' onSubmit={handleSubmit}>
-          <input className='w-11/12 py-1 outline-none border-b-2 border-black bg-transparent placeholder-zinc-600' type="text" placeholder="City" value={city} onChange={e => setCity(e.target.value)} />
-          <button type="submit" className='w-1/12'>
-            <Search className='w-full hover:cursor-pointer' />
-          </button>
-        </form>
+    <section className='overflow-hidden min-h-screen flex justify-center items-center'>
+      <main className="">
+        <div className="h-fit min-w-[360px] bg-white/50 rounded-lg py-8 px-7 mx-2 shadow-lg">
+          <h1 className="text-center text-2xl font-bold">Weather App</h1>
+          <form className='flex w-full justify-between items-center mt-5' onSubmit={handleSubmit}>
+            <input className='w-11/12 py-1 outline-none border-b-2 border-black bg-transparent placeholder-zinc-600' type="text" placeholder="City" value={city} onChange={e => setCity(e.target.value)} />
+            <button type="submit" className='w-1/12'>
+              <Search className='w-full hover:cursor-pointer' />
+            </button>
+          </form>
 
-        {data ?
-          <div>
-            <City data={data} />
-            <Stats data={data} />
-          </div>
-          : ''}
+          {data ?
+            <div>
+              <City data={data} />
+              <Stats data={data} />
+            </div>
+            : ''}
 
-        {loading ?
-          <Loading />
-          : ''}
 
-        {error ?
-          <Error />
-          : ''}
+          {loading ?
+            <Loading />
+            : ''}
 
-      </div>
-    </main >
+          {error ?
+            <Error />
+            : ''}
+
+        </div>
+
+      </main >
+      <footer className='absolute bottom-1'>
+        <p className=''>Made by <a href="https://github.com/lucasadsr" target="_blank" className='underline italic'>Lucas Araújo</a></p>
+      </footer>
+    </section>
   )
 }
