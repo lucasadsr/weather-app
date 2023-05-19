@@ -1,5 +1,7 @@
 # 🌤️ Weather App
 
+![Print](./public/printscreen.png)
+
 Um aplicativo web de previsão do tempo construído com Next.js, que permite aos usuários obter informações de previsão do tempo para uma determinada cidade.
 
 ## ⚙️ Funcionalidades
