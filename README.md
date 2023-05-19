@@ -12,7 +12,7 @@ Um aplicativo web de previsão do tempo construído com Next.js, que permite aos
 - Next.js: Framework React para desenvolvimento web.
 - TailwindCSS: Framework CSS utilitário para estilização rápida e responsiva.
 - Lucide-react: Bliblioteca de ícones.
-- API de Previsão do Tempo: Utilizamos a [OpenWeatherMap](https://openweathermap.org) para obter os dados de previsão do tempo.
+- API de Previsão do Tempo: Utilizei [OpenWeatherMap](https://openweathermap.org) para obter os dados de previsão do tempo.
 
 ## ⚙️ Pré-requisitos
 
